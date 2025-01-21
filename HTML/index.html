@@ -4,8 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belajar HTML</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Kita buat web stand alone</h1>
+    <div class="container">
+        <div class="column">
+            <div class="a">
+                <h1>Heroic Savior 1979</h1>
+                <section>
+                    <p>Sir Goopie Woopie Alexander III</p>
+                </section>
+            </div>
+            <img src="images/catos.jpg" alt="soldier car" width="120" height="120" class="center">
+        </div>
+
+        <div class="a">
+            <audio autoplay loop id="audioPlayer">
+                <source src="music/No 1 Party Anthem Reff.MP3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- Elemen untuk menampilkan lirik -->
+        <div class="a">
+            <div id="lyricDisplay" class="lyric-display"></div>
+        </div>
+    </div>
+
+    <script>
+        // Data lirik lagu dengan waktu yang sesuai
+        const lyrics = [
+            { line: "Come on, come on, come on", time: 0.5 },
+            { line: "Come on, come on, come on", time: 5 },
+            { line: "Number one party anthem", time: 9.4 },
+            { line: "Come on, come on, come on", time: 14 },
+            { line: "Before the moment's gone", time: 18.2 },
+            { line: "Number one party anthem,", time: 22.26 },
+            { line: "yeah, yeah", time: 26.6 },
+            { line: "The look of love, the rush of blood", time: 30.6 },
+            { line: "The 'She's with me' is the Gallic shrug", time: 34.6 },
+            { line: "The shutterbugs, the Camera Plus", time: 38.6 },
+            { line: "The black and white and the color dodge", time: 42.6 },
+            { line: "The good time girls, the cubicles", time: 46.7 },
+            { line: "The house of fun, the number one", time: 50.7 },
+            { line: "Party anthem", time: 57 }
+        ];
+
+        // Ambil elemen audio dan tempat menampilkan lirik
+        const audioPlayer = document.getElementById('audioPlayer');
+        const lyricDisplay = document.getElementById('lyricDisplay');
+
+        let currentLyricIndex = -1;
+
+        // Fungsi untuk menampilkan lirik
+        function showLyric() {
+            const currentTime = audioPlayer.currentTime;
+
+            // Cari lirik yang sesuai dengan waktu saat ini
+            const nextLyricIndex = lyrics.findIndex(
+                (lyric, index) => currentTime >= lyric.time && currentTime < lyric.time + 3
+            );
+
+            // Jika lirik berubah, perbarui tampilan
+            if (nextLyricIndex !== currentLyricIndex) {
+                currentLyricIndex = nextLyricIndex;
+
+                if (currentLyricIndex !== -1) {
+                    // Tampilkan lirik dengan efek fade
+                    lyricDisplay.textContent = lyrics[currentLyricIndex].line;
+                    lyricDisplay.classList.add('visible');
+
+                    // Setelah 3,5 detik, sembunyikan lirik untuk fade-out
+                    setTimeout(() => {
+                        lyricDisplay.classList.remove('visible');
+                    }, 3280 );
+                }
+            }
+        }
+
+        // Tambahkan event listener untuk memperbarui lirik
+        audioPlayer.addEventListener('timeupdate', showLyric);
+    </script>
 </body>
 </html>

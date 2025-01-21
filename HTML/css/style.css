@@ -1,0 +1,45 @@
+.column {
+    max-width: 500px;
+    margin: auto;
+    background:transparent;
+    padding: 10px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+}
+
+div.a {
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+}
+
+body{
+    background-image: url("../images/war.jpg");
+    font-family: sans-serif;
+}
+
+img{
+    border: 5px solid #000000;
+}
+
+.lyric-display {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.lyric-display.visible {
+    opacity: 1;
+}
+
