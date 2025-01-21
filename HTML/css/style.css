@@ -1,24 +1,11 @@
-.column {
-    max-width: 500px;
-    margin: auto;
-    background:transparent;
-    padding: 10px;
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    height: 50%;
-}
-
 div.a {
     text-align: center;
 }
 
 p {
     font-size: 20px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    color: #ffffff;
 }
 
 body{
@@ -31,15 +18,35 @@ img{
 }
 
 .lyric-display {
-    font-size: 1.5em;
+    font-size: 30px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     color: #ffffff;
     opacity: 0;
+    font-family: sans-serif;
+    font-weight: bold;
     transition: opacity 1s ease-in-out;
+    text-shadow: -1px -2px 0 #000, 1px -2px 0 #000, -1px 2px 0 #000, 1px 2px 0 #000;
 }
 
 .lyric-display.visible {
     opacity: 1;
 }
 
+.row {
+    display: flex;
+    justify-content: space-between; /* Atur jarak antar elemen */
+    gap: 100px;/* Jarak antar elemen */
+    margin-left: 75px;
+}
+
+.item {
+    flex: 1; /* Setiap item memiliki ukuran yang sama */
+    text-align: center;
+    padding: 20px;
+}
+
+div.ab{
+    text-align: center;
+    margin-top: 50px;
+}
