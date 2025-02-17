@@ -11,6 +11,10 @@ p {
 body{
     background-image: url("../images/war.jpg");
     font-family: sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
 }
 
 img{
