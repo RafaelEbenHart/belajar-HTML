@@ -39,13 +39,13 @@ img{
 
 .row {
     display: flex;
-    justify-content: space-between; /* Atur jarak antar elemen */
-    gap: 100px;/* Jarak antar elemen */
+    justify-content: space-between;
+    gap: 50px;
     margin-left: 75px;
 }
 
 .item {
-    flex: 1; /* Setiap item memiliki ukuran yang sama */
+    flex: 1;
     text-align: center;
     padding: 20px;
 }
